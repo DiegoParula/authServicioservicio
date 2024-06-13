@@ -1,0 +1,24 @@
+server:
+  port: 8084
+
+spring:
+  application:
+    name: user-service
+
+  security:
+    oauth2:
+      client:
+        registration:
+          keycloak:
+            authorization-grant-type: client_credentials
+            client-id: backend
+            client-secret: Z9bX1rAuv70bH0xZ5pjqnsEJAmMk4m4M
+        provider:
+          keycloak:
+            token-uri: http://localhost:8080/realms/reino-para-auth-serv-serv/protocol/openid-connect/token
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-service:8761/eureka/
+    enabled: false
